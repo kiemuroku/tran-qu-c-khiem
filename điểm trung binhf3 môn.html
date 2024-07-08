@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    < <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điểm trung bình 3 môn</title>
+</head>
+<body>
+<h2>Điểm trung bình của 3 môn Toán, Văn, Anh</h2>
+<form id="gradeForm">
+    <label for="toan">Điểm Toán:</label><br>
+    <input type="number" id="toan" name="toan" required><br><br>
+    <label for="van">Điểm Văn:</label><br>
+    <input type="number" id="van" name="van" required><br><br>
+    <label for="anh">Điểm Anh:</label><br>
+    <input type="number" id="anh" name="anh" required><br><br>
+    <button type="button" onclick="calculateAverage()">Điểm trung bình</button>
+</form>
+
+<script>
+    function calculateAverage() {
+        var toan = parseFloat(document.getElementById('toan').value);
+        var van = parseFloat(document.getElementById('van').value);
+        var anh = parseFloat(document.getElementById('anh').value);
+
+        if (toan < 0 || toan > 10 || van < 0 || van > 10 || anh < 0 || anh > 10) {
+            alert('Điểm nhập không hợp lệ. Vui lòng nhập điểm trong khoảng từ 0 đến 10.');
+            return;
+        }
+
+        var average = (toan + van + anh) / 3;
+
+        var classification;
+        if (average >= 8) {
+            classification = 'Giỏi';
+        } else if (average >= 6.5) {
+            classification = 'Khá';
+        } else if (average >= 5) {
+            classification = 'Trung Bình';
+        } else if (average >= 3.5) {
+            classification = 'Yếu';
+        } else {
+            classification = 'Kém';
+        }
+        alert('Điểm trung bình của 3 môn là: ' + average.toFixed(2) + '\nXếp loại: ' + classification);
+    }
+</script>
+</body>
+</html>
+</head>
+<body>
+
+</body>
+</html>
